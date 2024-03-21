@@ -1,0 +1,27 @@
+@use '@/assets/scss/mixins' as m;
+
+.btn {
+  cursor: pointer;
+  color: var(--text-primary-color);
+  border-radius: 4px;
+  outline: 0;
+  border: 0;
+  padding: 13px;
+  font-size: 14px;
+  &-register {
+    font-size: 17px;
+    background-color: #d63031;
+    @include m.sm {
+      padding: 12px;
+      font-size: 13px;
+    }
+  }
+  &-login {
+    font-size: 17px;
+    background-color: #d63031;
+    @include m.sm {
+      padding: 12px;
+      font-size: 13px;
+    }
+  }
+}
