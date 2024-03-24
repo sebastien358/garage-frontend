@@ -15,12 +15,12 @@ export const useUserStore = defineStore('userStore', {
                 email: ''
             }
         },
-        async resetRequestPassword(): Email {
+        async resetRequestPassword() {
             const messageStore = useMessageStore()
             const formData = new FormData()
             formData.append('email', this.editEmail.email)
             try {
-                await axios.post('https://127.0.0.1:8000/reset/request-password', formData, {
+                await axios.post('https://127.0.0.1:8000/request/reset-password', formData, {
                     headers: {
                         Authorization: 'Bearer ' + sessionStorage.getItem('token')
                     }

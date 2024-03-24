@@ -79,7 +79,7 @@ const onSubmit = async () => {
 form {
   max-width: 400px;
   padding: 30px 20px 30px 20px;
-  @include m.md {
+  @include m.lg {
     max-width: 360px;
     form {
       padding: 20px;

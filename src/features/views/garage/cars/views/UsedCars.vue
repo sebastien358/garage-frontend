@@ -4,7 +4,7 @@
       <div class="d-flex flex-column">
         <div class="d-flex flex-column">
           <div class="d-flex justify-content-center">
-            <button class="btn-filter-car">Filtrer les véhicules</button>
+            <button type="button" class="btn-filter-car">Filtrer les véhicules</button>
           </div>
           <div class="filters-cars">
             <FiltersCars />
@@ -16,88 +16,112 @@
             <li class="card-content">
               <img src="@/assets/images/photo5.jpg">
               <div class="card-text">
-                <h3>ddd</h3>
-                <p>ddd</p>
-                <p>dd</p>
+                <h3>Dodge Charger</h3>
+                <p>Kilométrage: 100000km</p>
+                <p>Année: 1970</p>
                 <div class="separator"></div>
-                <p>ddd</p>
+                <p class="price">Prix: 30000€</p>
+                <div class="d-flex justify-content-center">
+                  <button class="btn-car-details">Détails</button>
+                </div>
               </div>
             </li>
 
             <li class="card-content">
               <img src="@/assets/images/photo5.jpg">
               <div class="card-text">
-                <h3>ddd</h3>
-                <p>ddd</p>
-                <p>dd</p>
+                <h3>Dodge Charger</h3>
+                <p>Kilométrage: 100000km</p>
+                <p>Année: 1970</p>
                 <div class="separator"></div>
-                <p>ddd</p>
+                <p class="price">Prix: 30000€</p>
+                <div class="d-flex justify-content-center">
+                  <button class="btn-car-details">Détails</button>
+                </div>
               </div>
             </li>
 
             <li class="card-content">
               <img src="@/assets/images/photo5.jpg">
               <div class="card-text">
-                <h3>ddd</h3>
-                <p>ddd</p>
-                <p>dd</p>
+                <h3>Dodge Charger</h3>
+                <p>Kilométrage: 100000km</p>
+                <p>Année: 1970</p>
                 <div class="separator"></div>
-                <p>ddd</p>
+                <p class="price">Prix: 30000€</p>
+                <div class="d-flex justify-content-center">
+                  <button class="btn-car-details">Détails</button>
+                </div>
               </div>
             </li>
 
             <li class="card-content">
               <img src="@/assets/images/photo5.jpg">
               <div class="card-text">
-                <h3>ddd</h3>
-                <p>ddd</p>
-                <p>dd</p>
+                <h3>Dodge Charger</h3>
+                <p>Kilométrage: 100000km</p>
+                <p>Année: 1970</p>
                 <div class="separator"></div>
-                <p>ddd</p>
+                <p class="price">Prix: 30000€</p>
+                <div class="d-flex justify-content-center">
+                  <button class="btn-car-details">Détails</button>
+                </div>
               </div>
             </li>
 
             <li class="card-content">
               <img src="@/assets/images/photo5.jpg">
               <div class="card-text">
-                <h3>ddd</h3>
-                <p>ddd</p>
-                <p>dd</p>
+                <h3>Dodge Charger</h3>
+                <p>Kilométrage: 100000km</p>
+                <p>Année: 1970</p>
                 <div class="separator"></div>
-                <p>ddd</p>
+                <p class="price">Prix: 30000€</p>
+                <div class="d-flex justify-content-center">
+                  <button class="btn-car-details">Détails</button>
+                </div>
               </div>
             </li>
 
             <li class="card-content">
               <img src="@/assets/images/photo5.jpg">
               <div class="card-text">
-                <h3>ddd</h3>
-                <p>ddd</p>
-                <p>dd</p>
+                <h3>Dodge Charger</h3>
+                <p>Kilométrage: 100000km</p>
+                <p>Année: 1970</p>
                 <div class="separator"></div>
-                <p>ddd</p>
+                <p class="price">Prix: 30000€</p>
+                <div class="d-flex justify-content-center">
+                  <button class="btn-car-details">Détails</button>
+                </div>
               </div>
             </li>
 
             <li class="card-content">
               <img src="@/assets/images/photo5.jpg">
               <div class="card-text">
-                <h3>ddd</h3>
-                <p>ddd</p>
-                <p>dd</p>
+                <h3>Dodge Charger</h3>
+                <p>Kilométrage: 100000km</p>
+                <p>Année: 1970</p>
                 <div class="separator"></div>
-                <p>ddd</p>
+                <p class="price">Prix: 30000€</p>
+                <div class="d-flex justify-content-center">
+                  <button class="btn-car-details">Détails</button>
+                </div>
               </div>
             </li>
 
             <li class="card-content">
               <img src="@/assets/images/photo5.jpg">
               <div class="card-text">
-                <h3>ddd</h3>
-                <p>ddd</p>
-                <p>dd</p>
+                <h3>Dodge Charger</h3>
+                <p>Kilométrage: 100000km</p>
+                <p>Année: 1970</p>
                 <div class="separator"></div>
-                <p>ddd</p>
+                <p class="price">Prix: 30000€</p>
+                <div class="d-flex justify-content-center">
+                  <button class="btn-car-details">Détails</button>
+                </div>
               </div>
             </li>
           </ul>
@@ -120,7 +144,7 @@ import FiltersCars from "@/features/views/garage/cars/components/FiltersCars.vue
   justify-content: center;
   align-items: center;
   height: 100%;
-  padding: 25px 20px;
+  padding: 25px 40px;
   @include m.sm {
     padding: 20px 20px 5px 20px;
   }
@@ -129,7 +153,7 @@ import FiltersCars from "@/features/views/garage/cars/components/FiltersCars.vue
 .btn-filter-car {
   cursor: pointer;
   padding: 12px 14px;
-  background-color: #00a8ff;
+  background-color: #0097e6;
   border-radius: 4px;
   color: white;
   border: 0;
@@ -183,8 +207,10 @@ import FiltersCars from "@/features/views/garage/cars/components/FiltersCars.vue
 }
 
 .card-text {
-  padding: 10px 10px 0 10px;
+  padding: 20px 10px 20px 10px;
   h3 {
+    text-align: center;
+    text-transform: uppercase;
     font-size: 16px;
   }
   .separator {
@@ -192,7 +218,20 @@ import FiltersCars from "@/features/views/garage/cars/components/FiltersCars.vue
     width: 100%;
   }
   p {
-    font-size: 14px;
+    font-size: 13px;
+  }
+  .price {
+    font-style: italic;
+    font-size: 11px;
+    font-weight: 500;
+  }
+  .btn-car-details {
+    cursor: pointer;
+    font-size: 12px;
+    background-color: black;
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
   }
 }
 </style>

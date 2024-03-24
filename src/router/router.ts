@@ -6,7 +6,7 @@ import Register from "@/components/register/views/Register.vue";
 import Contact from "@/features/views/garage/contact/views/Contact.vue";
 import Admin from "@/features/views/admin/views/Admin.vue";
 import {useUserAdminStore} from "@/stores/admin/userAdminStore";
-import ResetRequestPassword from "@/components/resetPassword/views/ResetRequestPassword.vue";
+import RequestResetPassword from "@/components/resetPassword/views/requestResetPassword.vue";
 import ResetPassword from "@/components/resetPassword/views/ResetPassword.vue";
 
 export const router = createRouter({
@@ -17,7 +17,7 @@ export const router = createRouter({
         {path: '/contact', name: 'contact', component: Contact},
         {path: '/register', name:'register', component: Register},
         {path: '/login', name: 'login', component: Login},
-        {path: '/reset/request-password', name: 'request-password', component: ResetRequestPassword},
+        {path: '/request/reset-password', name: 'request-password', component: RequestResetPassword},
         {path: '/reset-password/:token', component: ResetPassword},
         {path: '/administration', name: 'admin', meta: {isAdmin: true}, component: Admin}
     ]
