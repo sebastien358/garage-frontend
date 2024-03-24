@@ -3,26 +3,23 @@
 form {
   max-width: 390px;
   background-color: #f1f2f6;
-  padding: 40px 20px 25px 20px;
   border-radius: 8px;
   width: 100%;
-  @include m.sm {
-    padding: 25px 20px 25px 20px;
-  }
   h3 {
     text-align: center;
     font-size: 22px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     @include m.sm {
-      margin-bottom: 25px;
+      margin-bottom: 20px;
+      font-size: 20px;
     }
   }
 }
 
 .input-group {
-  margin-bottom: 20px;
+  margin-top: 15px;
   @include m.sm {
-    margin-bottom: 15px;
+    margin-top: 15px;
   }
   input {
     font-size: 14px;
@@ -32,41 +29,17 @@ form {
   }
 }
 
-.container-button {
-  margin: 25px 0;
-  @include m.sm {
-    margin: 15px 0 20px 0;
-  }
-}
-
 .input-group input, textarea {
   width: 100%;
-  border-radius: 0.375rem;
+  border-radius: 6px;
   border: 1px solid #dfe4ea;
   padding: 15px;
-  outline: 0;
+  @include m.sm {
+    padding: 13px;
+  }
+  //outline: 0;
 }
 
 .input-group input:focus {
-  border-color: rgba(167, 139, 250);
-}
-
-.account {
-  span {
-    font-size: 15px;
-    @include m.sm {
-      font-size: 14px;
-    }
-    .link {
-      text-decoration: none;
-      color: #d63031;
-      font-size: 16px;
-      @include m.sm {
-        font-size: 15px;
-      }
-    }
-    .link:hover {
-      text-decoration: underline;
-    }
-  }
+  //border-color: black;
 }

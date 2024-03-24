@@ -1,18 +1,30 @@
 import {createRouter, createWebHistory} from "vue-router";
-import Home from "@/features/views/home/views/Home.vue";
-import UsedCars from "@/features/views/cars/views/UsedCars.vue";
+import Home from "@/features/views/garage/home/views/Home.vue";
+import UsedCars from "@/features/views/garage/cars/views/UsedCars.vue";
 import Login from "@/components/login/views/Login.vue";
 import Register from "@/components/register/views/Register.vue";
-import Contact from "@/features/views/contact/views/Contact.vue";
+import Contact from "@/features/views/garage/contact/views/Contact.vue";
+import Admin from "@/features/views/admin/views/Admin.vue";
+import {useUserAdminStore} from "@/stores/admin/userAdminStore";
+import ResetRequestPassword from "@/components/resetPassword/views/ResetRequestPassword.vue";
+import ResetPassword from "@/components/resetPassword/views/ResetPassword.vue";
 
 export const router = createRouter({
     history: createWebHistory(),
     routes: [
-        {path: '/', redirect: '/home'},
-        {path: '/home', name: 'home', component: Home},
+        {path: '/', name: 'home', component: Home},
         {path: '/used-cars', name: 'used-cars', component: UsedCars},
         {path: '/contact', name: 'contact', component: Contact},
         {path: '/register', name:'register', component: Register},
         {path: '/login', name: 'login', component: Login},
+        {path: '/reset/request-password', name: 'request-password', component: ResetRequestPassword},
+        {path: '/reset-password/:token', component: ResetPassword},
+        {path: '/administration', name: 'admin', meta: {isAdmin: true}, component: Admin}
     ]
+})
+
+router.beforeEach((to, from, next) => {
+    const userAdminStore= useUserAdminStore()
+    if (to.meta.isAdmin && !userAdminStore.isLogged()) next({ name: 'login' })
+    else next()
 })

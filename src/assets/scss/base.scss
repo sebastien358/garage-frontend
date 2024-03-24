@@ -70,6 +70,10 @@ body {
   display: flex;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .flex-row {
   flex-direction: row;
 }

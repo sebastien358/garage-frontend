@@ -1,6 +1,9 @@
 <template>
   <div class="app-container">
     <ContactHeader class="contact-header" />
+    <div v-if="message" class="message">
+      <Alert />
+    </div>
     <Header class="header" />
     <div class="component">
       <slot />
@@ -13,6 +16,12 @@
 import Header from "@/components/header/views/Header.vue";
 import Footer from "@/components/footer/views/Footer.vue";
 import ContactHeader from "@/components/contactHeader/views/ContactHeader.vue";
+import {useMessageStore} from "@/stores/messageStore";
+import {storeToRefs} from "pinia";
+import Alert from "@/components/alert/views/Alert.vue";
+
+const messageStore = useMessageStore()
+const { message, error } = storeToRefs(messageStore)
 </script>
 
 <style scoped lang="scss">
@@ -20,26 +29,29 @@ import ContactHeader from "@/components/contactHeader/views/ContactHeader.vue";
 
 .app-container {
   display: grid;
-  grid-template-rows: 50px 110px 1fr auto;
+  grid-template-rows: 50px auto 110px 1fr auto;
   height: 100vh;
   grid-template-areas:
   'contact-header'
+  'message'
   'header'
   'component'
   'footer';
 
   @include m.md {
-    grid-template-rows: 100px 1fr auto;
+    grid-template-rows: 100px auto 1fr auto;
     grid-template-areas:
     'header'
+    'message'
     'component'
     'footer';
   }
 
   @include m.sm {
-    grid-template-rows: 80px 1fr auto;
+    grid-template-rows: 80px auto 1fr auto;
     grid-template-areas:
     'header'
+    'message'
     'component'
     'footer';
   }

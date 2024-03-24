@@ -1,7 +1,7 @@
 <template>
   <BaseTemplate>
     <section class="d-flex justify-content-center align-items-center banner">
-      <img src="@/assets/images/banner.jpg" class="banner-img">
+      <img src="../../../../../assets/images/banner.jpg" class="banner-img">
       <div class="banner-content">
         <h1 class="pb-20">Mécanique & Réparation & Entretien et révision</h1>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
@@ -56,7 +56,7 @@
     </section>
 
     <section class="show">
-      <img src="@/assets/images/pexels-cottonbro-studio-4488660.jpg" class="show-image">
+      <img src="../../../../../assets/images/pexels-cottonbro-studio-4488660.jpg" class="show-image">
       <div class="d-flex flex-column justify-content-center show-content">
         <div class="show-text">
           <h2>Véhicules toutes marques</h2>
@@ -144,17 +144,17 @@
         </div>
         <ul class="interview-list">
           <li class="interview-content">
-            <img src="@/assets/images/reparateur-automobile-utilisant-ordinateur-portable-lors-examen-moteur-voiture-dans-atelier.jpg" class="interview-img">
+            <img src="../../../../../assets/images/reparateur-automobile-utilisant-ordinateur-portable-lors-examen-moteur-voiture-dans-atelier.jpg" class="interview-img">
             <p>Diagnostique technique</p>
           </li>
 
           <li class="interview-content">
-            <img src="@/assets/images/oil-3979023_640.jpg" class="interview-img">
+            <img src="../../../../../assets/images/oil-3979023_640.jpg" class="interview-img">
             <p>Entretien avec remise à zéro</p>
           </li>
 
           <li class="interview-content">
-            <img src="@/assets/images/pexels-artem-podrez-8985517.jpg" class="interview-img">
+            <img src="../../../../../assets/images/pexels-artem-podrez-8985517.jpg" class="interview-img">
             <p>Mécanique générale</p>
           </li>
         </ul>

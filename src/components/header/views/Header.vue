@@ -14,16 +14,20 @@
             <li class="mr-20">
               <router-link :to="{name: 'contact'}" class="link">Nous Contacter</router-link>
             </li>
+            <li v-if="userAdminStore.isLogged()">
+              <router-link :to="{name: 'admin'}" class="link">Administration</router-link>
+            </li>
           </ul>
         </nav>
       </div>
 
       <nav>
         <ul class="d-flex align-items-center authentification">
-          <li class="mr-10">
-            <router-link :to="{name: 'register'}" class="link">Inscription</router-link>
+          <li v-if="userAdminStore.isLogged()" class="mr-10">
+            <router-link :to="{name: 'register'}" class="link mr-10">Inscription</router-link>
+            <a @click="disconnect" href="#" class="link-disconnect">Déconnexion</a>
           </li>
-          <li>
+          <li v-else>
             <router-link :to="{name: 'login'}" class="link">Connexion</router-link>
           </li>
         </ul>
@@ -38,15 +42,21 @@
               <router-link :to="{name: 'home'}" class="link">Accueil</router-link>
             </li>
             <li>
-              <router-link :to="{name: 'used -cars'}" class="link">Nos Occasions</router-link>
+              <router-link :to="{name: 'used-cars'}" class="link">Nos Occasions</router-link>
             </li>
             <li>
               <router-link :to="{name: 'contact'}" class="link">Nous Contacter</router-link>
             </li>
-            <li>
-              <router-link :to="{name: 'register'}" class="link">Inscription</router-link>
+            <li v-if="userAdminStore.isLogged()">
+              <router-link :to="{name: 'admin'}" class="link">Administration</router-link>
             </li>
-            <li>
+            <li v-if="userAdminStore.isLogged()">
+              <div class="d-flex flex-column">
+                <router-link :to="{name: 'register'}" class="link">Inscription</router-link>
+                <a href="#" class="link-disconnect">Déconnexion</a>
+              </div>
+            </li>
+            <li v-else>
               <router-link :to="{name: 'login'}" class="link">Connexion</router-link>
             </li>
           </ul>
@@ -59,12 +69,23 @@
 <script setup lang="ts">
 import {reactive} from "vue";
 import Calc from "@/components/calc/views/Calc.vue";
+import {useUserAdminStore} from "@/stores/admin/userAdminStore";
+import {useRouter} from "vue-router";
 
 const state = reactive<{
   open: boolean
 }>({
   open: false
 })
+
+const userAdminStore = useUserAdminStore()
+
+const router = useRouter()
+
+const disconnect = () => {
+  userAdminStore.logout()
+  router.push({name: 'login'})
+}
 </script>
 
 <style scoped lang="scss">
@@ -89,6 +110,8 @@ header {
   }
 }
 
+// logo
+
 .logo {
   display: none;
   @include m.md {
@@ -103,10 +126,23 @@ header {
   }
 }
 
-.link {
+// link header
+
+@mixin links-header {
   color: #777;
   font-size: 18px;
   text-decoration: none;
+}
+
+.link {
+  @include links-header;
+}
+
+.link-disconnect {
+  @include links-header;
+  &:hover {
+    color: #d63031;
+  }
 }
 
 @include m.md {
@@ -115,6 +151,8 @@ header {
     display: none;
   }
 }
+
+// menu mobile
 
 .menu-mobile {
   display: none;
