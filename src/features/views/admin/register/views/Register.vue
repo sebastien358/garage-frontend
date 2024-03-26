@@ -90,6 +90,7 @@ const router = useRouter()
 const onSubmit = async (editRegister) => {
   if (editRegister.password !== editRegister.confirm) {
     messageStore.addMessage('Les mots de passe ne correspondent pas', 'error')
+    return false
   }
   await registerAdminStore.register()
   await router.push({name: 'home'})

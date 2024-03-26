@@ -2,14 +2,10 @@ import {defineStore} from "pinia";
 import axios from "axios";
 import {useMessageStore} from "@/stores/messageStore";
 
-interface Register {
-    editRegister: RegisterInfo | null
-}
-
 export const useRegisterAdminStore = defineStore('registerAdminStore', {
-    state: (): Register => {
+    state: () => {
         return {
-            editRegister: null
+            editRegister: null,
         }
     },
     actions: {
@@ -25,7 +21,7 @@ export const useRegisterAdminStore = defineStore('registerAdminStore', {
         async register(){
             const messageStore= useMessageStore()
             const formData = new FormData()
-            formData.append('firstName', this.editRegister.fistName)
+            formData.append('firstName', this.editRegister.firstName)
             formData.append('lastName', this.editRegister.lastName)
             formData.append('email', this.editRegister.email)
             formData.append('password[first]', this.editRegister.password)
@@ -44,11 +40,3 @@ export const useRegisterAdminStore = defineStore('registerAdminStore', {
         }
     }
 })
-
-interface RegisterInfo {
-    firstName: string,
-    lastName: string,
-    email: string,
-    password: string,
-    confirm: string
-}

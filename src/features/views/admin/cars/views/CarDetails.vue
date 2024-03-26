@@ -1,11 +1,10 @@
 <template>
   <BaseTemplate>
     <div class="container">
-      administration
+      Car details
     </div>
   </BaseTemplate>
 </template>
-
 <script setup lang="ts">
 import BaseTemplate from "@/BaseTemplate.vue";
 </script>

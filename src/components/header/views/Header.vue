@@ -1,69 +1,71 @@
 <template>
-  <div class="d-flex align-items-center container">
-    <header class="d-flex align-items-center space-between w-100">
-      <div class="d-flex align-items-center">
-        <img src="@/assets/images/race-car-309123_640.png" class="logo">
+
+    <div class="d-flex align-items-center container">
+      <header class="d-flex align-items-center space-between w-100">
+        <div class="d-flex align-items-center">
+          <img src="@/assets/images/race-car-309123_640.png" class="logo">
+          <nav>
+            <ul class="d-flex align-items-center menu-desktop">
+              <li class="mr-20">
+                <router-link :to="{name: 'home'}" class="link">Accueil</router-link>
+              </li>
+              <li class="mr-20">
+                <router-link :to="{name: 'cars'}" class="link">Nos Occasions</router-link>
+              </li>
+              <li class="mr-20">
+                <router-link :to="{name: 'contact'}" class="link">Nous Contacter</router-link>
+              </li>
+              <li v-if="userAdminStore.isLogged()">
+                <router-link :to="{name: 'admin'}" class="link">Administration</router-link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
         <nav>
-          <ul class="d-flex align-items-center menu-desktop">
-            <li class="mr-20">
-              <router-link :to="{name: 'home'}" class="link">Accueil</router-link>
-            </li>
-            <li class="mr-20">
-              <router-link :to="{name: 'used-cars'}" class="link">Nos Occasions</router-link>
-            </li>
-            <li class="mr-20">
-              <router-link :to="{name: 'contact'}" class="link">Nous Contacter</router-link>
-            </li>
-            <li v-if="userAdminStore.isLogged()">
-              <router-link :to="{name: 'admin'}" class="link">Administration</router-link>
-            </li>
-          </ul>
-        </nav>
-      </div>
-
-      <nav>
-        <ul class="d-flex align-items-center authentification">
-          <li v-if="userAdminStore.isLogged()" class="mr-10">
-            <router-link :to="{name: 'register'}" class="link mr-10">Inscription</router-link>
-            <a @click="disconnect" href="#" class="link-disconnect">Déconnexion</a>
-          </li>
-          <li v-else>
-            <router-link :to="{name: 'login'}" class="link">Connexion</router-link>
-          </li>
-        </ul>
-      </nav>
-
-      <nav class="menu-mobile">
-        <Calc @close="state.open = false" :open="state.open" :transparent="true" />
-        <font-awesome-icon @click="state.open = !state.open" icon="fa-solid fa-bars" />
-        <Transition>
-          <ul v-if="state.open" class="menu-mobile-content">
-            <li>
-              <router-link :to="{name: 'home'}" class="link">Accueil</router-link>
-            </li>
-            <li>
-              <router-link :to="{name: 'used-cars'}" class="link">Nos Occasions</router-link>
-            </li>
-            <li>
-              <router-link :to="{name: 'contact'}" class="link">Nous Contacter</router-link>
-            </li>
-            <li v-if="userAdminStore.isLogged()">
-              <router-link :to="{name: 'admin'}" class="link">Administration</router-link>
-            </li>
-            <li v-if="userAdminStore.isLogged()">
-              <div class="d-flex flex-column">
-                <router-link :to="{name: 'register'}" class="link">Inscription</router-link>
-                <a href="#" class="link-disconnect">Déconnexion</a>
-              </div>
+          <ul class="d-flex align-items-center authentification">
+            <li v-if="userAdminStore.isLogged()" class="mr-10">
+              <router-link :to="{name: 'register'}" class="link mr-10">Inscription</router-link>
+              <a @click="disconnect" href="#" class="link-disconnect">Déconnexion</a>
             </li>
             <li v-else>
               <router-link :to="{name: 'login'}" class="link">Connexion</router-link>
             </li>
           </ul>
-        </Transition>
-      </nav>
-    </header>
-  </div>
+        </nav>
+
+        <nav class="menu-mobile">
+          <Calc @close="state.open = false" :open="state.open" :transparent="true" />
+          <font-awesome-icon @click="state.open = !state.open" icon="fa-solid fa-bars" />
+          <Transition>
+            <ul v-if="state.open" class="menu-mobile-content">
+              <li>
+                <router-link :to="{name: 'home'}" class="link">Accueil</router-link>
+              </li>
+              <li>
+                <router-link :to="{name: 'cars'}" class="link">Nos Occasions</router-link>
+              </li>
+              <li>
+                <router-link :to="{name: 'contact'}" class="link">Nous Contacter</router-link>
+              </li>
+              <li v-if="userAdminStore.isLogged()">
+                <router-link :to="{name: 'admin'}" class="link">Administration</router-link>
+              </li>
+              <li v-if="userAdminStore.isLogged()">
+                <div class="d-flex flex-column">
+                  <router-link :to="{name: 'register'}" class="link">Inscription</router-link>
+                  <a href="#" class="link-disconnect">Déconnexion</a>
+                </div>
+              </li>
+              <li v-else>
+                <router-link :to="{name: 'login'}" class="link">Connexion</router-link>
+              </li>
+            </ul>
+          </Transition>
+        </nav>
+      </header>
+    </div>
+
 </template>
 
 <script setup lang="ts">

@@ -49,7 +49,7 @@
         </div>
       </div>
       <div class="d-flex justify-content-center">
-        <router-link :to="{name: 'used-cars'}">
+        <router-link :to="{name: 'cars'}">
           <button class="btn-used-car">Nos véhicules d'occasion</button>
         </router-link>
       </div>

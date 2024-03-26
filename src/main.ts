@@ -14,16 +14,28 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import {
     faBars,
     faCarSide,
-    faCheck,
+    faCheck, faEye,
     faLocationDot,
-    faMessage,
-    faPhone,
+    faMessage, faPenToSquare,
+    faPhone, faTrash,
     faWrench
 } from "@fortawesome/free-solid-svg-icons";
 import {faFacebookF} from "@fortawesome/free-brands-svg-icons";
 
 /* add icons to the library */
-library.add(faBars, faFacebookF, faWrench, faMessage, faCarSide, faCheck, faLocationDot, faPhone)
+library.add(
+    faBars,
+    faFacebookF,
+    faWrench,
+    faMessage,
+    faCarSide,
+    faCheck,
+    faLocationDot,
+    faPhone,
+    faTrash,
+    faPenToSquare,
+    faEye
+)
 
 const pinia = createPinia()
 const app = createApp(App)
