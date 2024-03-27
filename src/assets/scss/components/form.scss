@@ -29,11 +29,11 @@ form {
   }
 }
 
-.input-group input, textarea, select {
-  width: 100%;
+.input-group input, select, textarea {
   border-radius: 6px;
   border: 1px solid #dfe4ea;
   padding: 15px;
+  width: 100%;
   @include m.sm {
     padding: 13px;
   }

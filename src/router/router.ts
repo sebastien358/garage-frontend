@@ -1,6 +1,8 @@
 import {createRouter, createWebHistory} from "vue-router";
 import {useUserAdminStore} from "@/stores/admin/userAdminStore";
 import Home from "@/features/views/garage/home/views/Home.vue";
+import CarsList from "@/features/views/garage/cars/views/CarsList.vue";
+import CarDetails from "@/features/views/garage/cars/views/CarDetails.vue";
 import Login from "@/components/login/views/Login.vue";
 import Register from "@/features/views/admin/register/views/Register.vue";
 import Contact from "@/features/views/garage/contact/views/Contact.vue";
@@ -8,14 +10,12 @@ import Admin from "@/features/views/admin/Admin.vue";
 import RequestResetPassword from "@/components/resetPassword/views/requestResetPassword.vue";
 import ResetPassword from "@/components/resetPassword/views/ResetPassword.vue";
 import {ADMIN_ROUTES} from "@/features/views/admin/admin.route";
-import Cars from "@/features/views/garage/cars/views/Cars.vue";
-import CarDetails from "@/features/views/admin/cars/views/CarDetails.vue";
 
 export const router = createRouter({
     history: createWebHistory(),
     routes: [
         {path: '/', name: 'home', component: Home},
-        {path: '/cars', name: 'cars', component: Cars},
+        {path: '/cars', name: 'cars', component: CarsList},
         {path: '/car-details/:id', name: 'car-details', component: CarDetails},
         {path: '/contact', name: 'contact', component: Contact},
         {path: '/register', name:'register', component: Register},

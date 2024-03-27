@@ -40,6 +40,18 @@
         </router-link>
       </li>
     </ul>
+
+    <ul class="nav-admin-list">
+      <h3>Contacts</h3>
+      <li>
+        <router-link
+          :to="{name: 'admin-contacts-list'}"
+          class="link"
+        >
+          Liste des messages
+        </router-link>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -66,7 +78,7 @@ onMounted(async () => {
   background-color: #f1f2f6;
   min-width: 190px;
   padding: 0 10px;
-  height: calc(100vh - 700px);
+  height: calc(100vh - 650px);
   margin: 10px 0;
   @include m.lg {
     position: fixed;
@@ -110,6 +122,10 @@ onMounted(async () => {
 }
 
 .router-link-exact-active {
-  text-decoration: underline;
+  color: #d63031;
+  @include m.lg {
+    color: white !important;
+    text-decoration: underline !important;
+  }
 }
 </style>

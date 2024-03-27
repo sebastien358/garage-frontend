@@ -111,16 +111,18 @@ const onClickInputFilesChange = () => {
 @use '@/assets/scss/mixins' as m;
 
 .cars-create {
-  height: calc(100vh - 700px);
-  padding: 20px 0;
+  height: calc(100vh - 630px);
+  @include m.lg {
+    padding: 20px 0;
+  }
 }
 
 form {
-  max-width: 380px;
+  max-width: 400px;
   padding: 30px 20px 30px 20px;
   @include m.lg {
     padding: 20px;
-    max-width: 340px;
+    max-width: 380px;
   }
   h3 {
     font-size: 20px;

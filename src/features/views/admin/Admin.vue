@@ -8,7 +8,7 @@
         </Transition>
         <div class="d-flex flex-column component">
           <div class="d-flex flex-column container-button">
-            <button @click="state.open = !state.open" class="btn-menu">menu</button>
+            <button @click="state.open = !state.open" class="btn-menu">Menu</button>
           </div>
           <div class="#">
             <RouterView v-slot="{Component}">
@@ -61,7 +61,7 @@ const state = reactive<{
   .btn-menu {
     cursor: pointer;
     color: white;
-    background-color: #0984e3;
+    background-color: #01a3a4;
     border-radius: 4px;
     padding: 12px;
     width: 100%;

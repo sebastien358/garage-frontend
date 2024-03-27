@@ -1,21 +1,24 @@
 <template>
   <div class="d-flex flex-wrap align-items-center justify-content-center container-inputs-range">
     <div class="d-flex flex-column">
-      <div class="d-flex justify-content-end">
+      <div class="d-flex align-items-center space-between">
+        <span class="title-filtre">Kilométrage</span>
         <button @click="filtersCars.mileage = 0" class="btn-reset">reset</button>
       </div>
       <input v-model="filtersCars.mileage" type="range" min="0" max="400000" step="10000">
       <div id="h4-container"><div id="h4-subcontainer"><h4>{{filtersCars.mileage}}<span></span></h4></div></div>
     </div>
     <div class="d-flex flex-column">
-      <div class="d-flex justify-content-end">
+      <div class="d-flex align-items-center space-between">
+        <span class="title-filtre">Prix</span>
         <button @click="filtersCars.price = 0" class="btn-reset">reset</button>
       </div>
       <input v-model="filtersCars.price" type="range" min="0" max="100000" step="1000">
       <div id="h4-container"><div id="h4-subcontainer"><h4>{{filtersCars.price}}<span></span></h4></div></div>
     </div>
     <div class="d-flex flex-column">
-      <div class="d-flex justify-content-end">
+      <div class="d-flex align-items-center space-between">
+        <span class="title-filtre">Année</span>
         <button @click="filtersCars.circulationYear = '0'" class="btn-reset">reset</button>
       </div>
       <input  v-model="filtersCars.circulationYear" type="range" min="1960" max="2030" step="1">
@@ -49,6 +52,12 @@ const { filtersCars } = storeToRefs(carStore)
   color: white;
   position: relative;
   right: 3px;
+}
+
+.title-filtre {
+  font-size: 13px;
+  position: relative;
+  left: 3px;
 }
 
 input[type="range"] {

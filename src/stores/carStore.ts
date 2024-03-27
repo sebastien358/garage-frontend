@@ -44,6 +44,18 @@ export const useCarStore = defineStore('carStore', {
                 mileage: 0,
                 circulationYear: '1960'
             }
+        },
+        async getCurrentCar(id: number) {
+            try {
+                const response = await axios.get(`https://127.0.0.1:8000/car/details/${id}`, {
+                    headers: {
+                        Authorization: 'Bearer ' + sessionStorage.getItem('token')
+                    }
+                })
+                this.editCar = response.data
+            } catch(e) {
+                console.error(e)
+            }
         }
     }
 })

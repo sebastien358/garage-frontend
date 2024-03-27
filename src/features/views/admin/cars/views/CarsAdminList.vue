@@ -22,8 +22,12 @@
             <td>{{new Date(car.circulationYear).getFullYear()}}</td>
             <td>{{car.fuel}}</td>
             <td class="container-icon">
-              <font-awesome-icon icon="fa-solid fa-eye" />
-              <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+              <router-link :to="{name: 'admin-car-details', params: {id: car.id}}">
+                <font-awesome-icon icon="fa-solid fa-eye" />
+              </router-link>
+              <router-link :to="{name: 'admin-car-update', params: {id: car.id}}">
+                <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+              </router-link>
             </td>
           </tr>
         </tbody>

@@ -95,8 +95,10 @@ const onSubmit = async (editUser) => {
 @use '@/assets/scss/mixins' as m;
 
 .profile {
-  height: calc(100vh - 700px);
-  padding: 20px 0;
+  height: calc(100vh - 650px);
+  @include m.lg {
+    padding: 20px 0;
+  }
 }
 
 form {

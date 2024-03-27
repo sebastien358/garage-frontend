@@ -21,6 +21,19 @@ export const useCarAdminStore = defineStore('carAdminStore', {
                 console.error(e)
             }
         },
+        async getCurrentCar(id: number) {
+            try {
+                const response = await axios.get(`https://127.0.0.1:8000/admin/car/details/${id}`, {
+                    headers: {
+                        Authorization: 'Bearer ' + sessionStorage.getItem('token')
+                    }
+                })
+                this.editCar = response.data
+            } catch(e) {
+                console.log(this.editCar)
+                console.error(e)
+            }
+        },
         async initCar() {
             this.editCar = {
                 model: '',
@@ -53,6 +66,19 @@ export const useCarAdminStore = defineStore('carAdminStore', {
                 await this.initCar()
             } catch(e) {
                 console.error(e)
+            }
+
+            await this.getCars()
+        },
+        async deleteCar(id) {
+            try {
+                await axios.delete(`https://127.0.0.1:8000/admin/car/delete/${id}`, {
+                    headers: {
+                        Authorization: 'Bearer ' + sessionStorage.getItem('token')
+                    }
+                })
+            } catch(e) {
+                console.log(e)
             }
 
             await this.getCars()

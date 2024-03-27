@@ -486,6 +486,7 @@ import BaseTemplate from "@/BaseTemplate.vue";
 }
 
 .btn-used-car {
+  cursor: pointer;
   margin-top: 40px;
   background-color: #d63031;
   color: var(--text-primary-color);
